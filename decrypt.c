@@ -275,10 +275,10 @@ BYTE* decryptAES(const char* AESDONTDELEATE, const char* SPrivKey, const char* d
 }
 
 int main() {
-    const char* path = "C:/Users/mjank/Desktop/DANGER";
-    const char* SPrivKey = "C:/Users/mjank/Documents/MalDev/RansomwareVideo/GotchaCrypt/keys/private.txt";
-    const char* AESDONTDELEATE = "C:/Users/mjank/Desktop/AESDONTDELEATE.txt";
-    const char* decrypted = "C:/Users/mjank/Desktop/AESDECRYPTED.txt";
+    const char* path = "PUT_SOMETHING_HERE";
+    const char* SPrivKey = "PUT_SOMETHING_HERE";
+    const char* AESDONTDELEATE = "PUT_SOMETHING_HERE";
+    const char* decrypted = "PUT_SOMETHING_HERE";
     unsigned char decryptedAES[257];
 
     DWORD decryptedAESKeyLen;
