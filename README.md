@@ -2,7 +2,7 @@
 
 Thank you for visiting my GitHub repository! Here, you'll discover the code for all of my projects. Additionally, don't forget to check out my YouTube channel for necessary information about each code.
 
-[YouTube Channel](https://www.youtube.com/screeck)
+[YouTube Channel](https://www.youtube.com/@screeck)
 
 ## Disclaimer
 
