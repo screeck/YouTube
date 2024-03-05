@@ -1,0 +1,48 @@
+
+YOU NEED SUDO FOR MOST OF THEM
+
+--INSTALL TOR--
+
+dpkg --print-architecture
+
+apt install apt-transport-https
+
+deb     [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org <DISTRIBUTION> main
+deb-src [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org <DISTRIBUTION> main
+
+apt install gpg
+
+wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | tee /usr/share/keyrings/tor-archive-keyring.gpg >/dev/null
+
+apt update
+
+apt install tor deb.torproject.org-keyring
+
+
+  --AUTOMATED UPDATES--
+  
+apt-get install unattended-upgrades apt-listchanges
+
+Unattended-Upgrade::Allowed-Origins {
+    "${distro_id}:${distro_codename}-security";
+    "TorProject:${distro_codename}";
+};
+Unattended-Upgrade::Package-Blacklist {
+};
+
+
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::AutocleanInterval "5";
+APT::Periodic::Unattended-Upgrade "1";
+APT::Periodic::Verbose "1";
+
+
+link to sample tor-exit-notice.html ->  https://gitlab.torproject.org/tpo/core/tor/-/raw/HEAD/contrib/operator-tools/tor-exit-notice.html
+
+link to different exit policies -> https://gitlab.torproject.org/legacy/trac/-/wikis/doc/ReducedExitPolicy
+
+--DNS RESOLUTION--
+  
+apt install unbound
+cp /etc/resolv.conf /etc/resolv.conf.backup
+echo nameserver 127.0.0.1 > /etc/resolv.conf
